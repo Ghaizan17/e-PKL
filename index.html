@@ -6,9 +6,9 @@
     <title>Skenda e-PKL</title>
     <link rel="shortcut icon" href="asset/smkn2.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="all.min.css">
-    <script src="bootstrap.bundle.min.js"></script>
-    <script src="all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
 </head>
 <style>
     * {
@@ -23,27 +23,175 @@
     }
     .container-fluid {
         max-width: 540px;
-        
+        padding: 0;
     }
 
+    /* slide show */
+    .swiper-container {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .swiper-slide {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .statistik{
+        flex: 0 0 100%;
+        padding: 10px;
+        width:  350px;
+        height: 100px;
+        max-width: 90%;
+        box-shadow: 1px 1px 2px grey;
+    }
+
+    .statistik .icon{
+        width: 70px;
+        height: 70px;
+        position: relative;
+        left: 10px;
+    }
+
+    .statistik .icon i{
+        position: relative;
+        left: 20px;
+        top: 20px;
+        font-size: 30px;
+    }
+
+    .statistik .text {
+        display: grid;
+    }
+
+    .statistik .text{
+        position: relative;
+        left: 40px;
+    }
+
+/* pagination */     
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0px; 
+        text-align: center;
+        width: 100%;
+        z-index: 5;
+    }
+
+    .swiper-pagination-bullet {
+        background: #c8c8c8; 
+        opacity: 1; 
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #767676;
+    }
+
+
+    @media only screen  and (max-width: 500px) {
+
+        .statistik .icon{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            left: 2px;
+        }
+
+        .statistik .icon i{
+            position: relative;
+            left: 13px;
+            top: 13px;
+            font-size: 25px;
+        }
+
+        .statistik .text{
+            position: relative;
+            left: 10px;
+            font-size: 14PX;
+            margin: 0PX;
+        }
+    }
 </style>
-<body class="container-fluid">
-    <!-- header -->
-    <nav class=" fixed-top container-fluid">
+<body class="container-fluid ">
+<!-- header -->
+    <nav class=" sticky-top container-fluid ">
         <div class=" bg-dark p-3">
             <a class="navbar-brand text-light" href="#">
                 <img src="asset/smkn2.png" alt="logo" height="30" class="d-inline-block     ">
                 Skenda e-PKL
             </a>
         </div>
-        <div class="px-1">
+        <div class="px-1 bg-body-secondary">
             <marquee class="py-1 text-primary" direction="left">
                 <i class="fa fa-bullhorn"></i>
                 Kepada Pembimbing sebelum melakukan penjemputan pastikan peserta didik sudah mendapatkan nilai dari DUDIKA dan peserta Didik setelah selesai mohon kiranya mengisikan review tolong perhatikan
             </marquee>
         </div>
     </nav>
+            <!-- slide show -->
+            <div class="swiper-container position-relative mt-4 ">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper d-inline-flex">
 
+                    <!-- slide-1 -->
+                    <div class="swiper-slide">
+                        <div class="statistik container d-flex align-items-center bg-light rounded-3 mb-5">
+                            <div class="icon bg-info text-light rounded-3">
+                                <i class="fa fa-edit"></i> 
+                            </div>
+                            <div class="text">Kehadiran <b>90%</b></div>
+                        </div>
+                    </div>
+
+                    <!-- slide-2 -->
+                    <div class="swiper-slide">
+                        <div class="statistik container d-flex align-items-center bg-light rounded-3 mb-5">
+                            <div class="icon bg-danger text-light rounded-3">
+                                <i class="fa fa-chart-line"></i> 
+                            </div>
+                            <div class="text">Aktifitas <b>19</b></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="statistik container d-flex align-items-center bg-light rounded-3 mb-5">
+                            <div class="icon bg-warning rounded-3">
+                                <i class="fa fa-calendar-days "></i> 
+                            </div>
+                            <div class="text">Hadir bulan ini <span><b class="me-1">0</b>hari</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="statistik container d-flex align-items-center bg-light rounded-3 mb-5">
+                            <div class="icon text-light bg-dark rounded-3">
+                                <i class="fa fa-book"></i> 
+                            </div>
+                            <div class="text">Buku Manual <b class="text-primary"><i class="fa fa-download me-2"></i>Unduh</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
 </body>
-
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 2, // Tampilkan satu slide per waktu
+                    spaceBetween: 10, // Jarak antar slide
+                    loop: true,       // Aktifkan loop agar slideshow terus berjalan
+                    autoplay: {
+                        delay: 3000,  // Perpindahan slide otomatis setiap 3 detik
+                        disableOnInteraction: false, // Autoplay tidak berhenti jika pengguna menyentuh slide
+                    },
+                    pagination: {
+                        el: '.swiper-pagination', // Elemen pagination
+                        clickable: true,         // Pagination dapat diklik
+                    },
+                });
+    </script>
 </html>
