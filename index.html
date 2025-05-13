@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skenda e-PKL</title>
-    <link rel="shortcut icon" href="asset/smkn2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="asset/smkn2.svg" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -20,6 +20,7 @@
 
     body {
         min-height: 100vh;
+        
     }
     .container-fluid {
         max-width: 540px;
@@ -80,7 +81,7 @@
     }
 
     .swiper-pagination-bullet {
-        background: #c8c8c8; 
+        background: #eae8e8; 
         opacity: 1; 
     }
 
@@ -88,6 +89,11 @@
         background: #767676;
     }
 
+    /* custom class */
+
+    .w-30 {
+        width: 30%;
+    }
 
     @media only screen  and (max-width: 500px) {
 
@@ -110,27 +116,29 @@
             left: 10px;
             font-size: 14PX;
             margin: 0PX;
+
         }
     }
 </style>
 <body class="container-fluid ">
 <!-- header -->
-    <nav class=" sticky-top container-fluid ">
+    <nav class=" sticky-top container-fluid">
         <div class=" bg-dark p-3">
             <a class="navbar-brand text-light" href="#">
-                <img src="asset/smkn2.png" alt="logo" height="30" class="d-inline-block     ">
+                <img src="asset/smkn2.svg" alt="logo" height="30" class="d-inline-block     ">
                 Skenda e-PKL
             </a>
         </div>
-        <div class="px-1 bg-body-secondary">
+        <div class=" bg-light ">
             <marquee class="py-1 text-primary" direction="left">
                 <i class="fa fa-bullhorn"></i>
                 Kepada Pembimbing sebelum melakukan penjemputan pastikan peserta didik sudah mendapatkan nilai dari DUDIKA dan peserta Didik setelah selesai mohon kiranya mengisikan review tolong perhatikan
             </marquee>
         </div>
     </nav>
+    <div class="container bg-dark-subtle p-0">
             <!-- slide show -->
-            <div class="swiper-container position-relative mt-4 ">
+            <div class="swiper-container position-relative  pt-4">
                 <div class="swiper-pagination"></div>
                 <div class="swiper-wrapper d-inline-flex">
 
@@ -175,14 +183,42 @@
                     </div>
                 </div>
             </div>
-        
+            <div class="container bg-light p-3 rounded-top-5 d-flex">
+                <div class="container-fluid w-25 ">
+                    <button type="button" class="btn ">
+                        <div class="text-center row d-flex justify-content-center">
+                            <i class="fa fa-earth fs-1 text-success"></i>
+                            <span class="">Geografis</span>
+                        </div>
+                            
+                    </button>
+                </div>
+                <div class="container-fluid w-25 ">
+                    <button type="button" class="btn ">
+                        <div class="text-center row d-flex justify-content-center">
+                            <i class="fa fa-earth fs-1 text-success"></i>
+                            <span class="">Geografis</span>
+                        </div>
+                            
+                    </button>
+                </div>
+                <div class="container-fluid w-25 ">
+                    <button type="button" class="btn ">
+                        <div class="text-center row d-flex justify-content-center">
+                            <i class="fa fa-earth fs-1 text-success"></i>
+                            <span class="">Geografis</span>
+                        </div>
+                            
+                    </button>
+                </div>
+            </div>
+    </div>
 </body>
     <script src="bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper-container', {
                     slidesPerView: 2, // Tampilkan satu slide per waktu
-                    spaceBetween: 10, // Jarak antar slide
                     loop: true,       // Aktifkan loop agar slideshow terus berjalan
                     autoplay: {
                         delay: 3000,  // Perpindahan slide otomatis setiap 3 detik
